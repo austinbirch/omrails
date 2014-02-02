@@ -1,5 +1,15 @@
 == README
 
+
+Shit to fix:
+* Cannot get simple_form to play nice with Bootstrap 3 form classes.
+* Cannot get Devise to play nice with Rails 4. Have added code to application_controller to allow me to capture name on signup (and this works), but cannot add a name to an existing user profile. Flash tells me profile was updated successfully, but if you view the profile again the name field is blank. Would these help:
+
+http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
+http://api.rubyonrails.org/classes/ActionController/StrongParameters.html
+http://stackoverflow.com/questions/7085669/adding-name-attribute-to-user-in-devise?rq=1 (see comment: Not sure what the answer for rails 4 is at the moment, but a quick fix would be to add gem 'protected_attributes' to your gemfile. Then you can use attr_accessible)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
