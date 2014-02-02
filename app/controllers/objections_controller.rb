@@ -1,30 +1,34 @@
 class ObjectionsController < ApplicationController
-  before_action :set_objection, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!, except: [:index]
+  # before_action :set_objection, only: [:show, :edit, :update, :destroy]
 
   # GET /objections
   # GET /objections.json
   def index
-    @objections = Objection.all
+    @objection = Objection.all
   end
 
   # GET /objections/1
   # GET /objections/1.json
   def show
+    @objection = current_user.objections.find(params[:id])
   end
 
   # GET /objections/new
   def new
-    @objection = Objection.new
+    @objection = current_user.objections.new
   end
 
   # GET /objections/1/edit
   def edit
+    @objection = current_user.objections.find(params[:id])
   end
 
   # POST /objections
   # POST /objections.json
   def create
-    @objection = Objection.new(objection_params)
+    @objection = current_user.objections.new(objection_params)
 
     respond_to do |format|
       if @objection.save
@@ -40,6 +44,8 @@ class ObjectionsController < ApplicationController
   # PATCH/PUT /objections/1
   # PATCH/PUT /objections/1.json
   def update
+    @objection = current_user.objections.find(params[:id])
+
     respond_to do |format|
       if @objection.update(objection_params)
         format.html { redirect_to @objection, notice: 'Objection was successfully updated.' }
@@ -54,6 +60,8 @@ class ObjectionsController < ApplicationController
   # DELETE /objections/1
   # DELETE /objections/1.json
   def destroy
+    @objection = current_user.objections.find(params[:id])
+
     @objection.destroy
     respond_to do |format|
       format.html { redirect_to objections_url }
@@ -63,9 +71,9 @@ class ObjectionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_objection
-      @objection = Objection.find(params[:id])
-    end
+    # def set_objection
+    #   @objection = Objection.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def objection_params

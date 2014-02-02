@@ -1,9 +1,16 @@
   <tr>
     <td><%= objection.title %></td>
+    <td><%= objection.user.name %></td>
     <td><%= objection.objection %></td>
     <td><%= objection.rebuttal %></td>
     <td><%= objection.tag %></td>
-    <td><%= link_to 'Show', objection %></td>
-    <td><%= link_to 'Edit', edit_objection_path(objection) %></td>
-    <td><%= link_to 'Destroy', objection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user == objection.user %>
+      <td><%= link_to 'Edit', edit_objection_path(objection) %></td>
+      <td><%= link_to 'Delete', objection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% else %>
+      <td>---</td>
+      <td>---</td>
+    <% end %>
   </tr>
+
+

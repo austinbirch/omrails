@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202135314) do
+ActiveRecord::Schema.define(version: 20140202201131) do
 
   create_table "objections", force: true do |t|
     t.string   "title"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20140202135314) do
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "objections", ["user_id"], name: "index_objections_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

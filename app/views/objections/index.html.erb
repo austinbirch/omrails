@@ -1,23 +1,47 @@
-<h1>Listing objections</h1>
+<h1>All Objections</h1>
+
+<h3>Your Objections</h3>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
+      <th>Created By</th>
       <th>Objection</th>
       <th>Rebuttal</th>
       <th>Tag</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
     
   <tbody>
-    <%= render @objections %>
+    <%= render @objection %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Objection', new_objection_path %>
+<h3>Your Team's Objections</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Objection</th>
+      <th>Rebuttal</th>
+      <th>Tag</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+    
+  <tbody>
+    <%= render @objection %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Objection', new_objection_path, class: "btn btn-primary btn-lg" %>

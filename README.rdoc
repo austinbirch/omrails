@@ -12,4 +12,6 @@ Shit to do:
     https://teamtreehouse.com/forum/got-a-problem-with-devise-attraccessible-and-rails-4
 
 * Make the flashes look better using Gritter - https://github.com/RobinBrouwer/gritter.
+* Make URLs not so obviously rails.
+* When you login, you see a section showing your objects and a section showing your team's objections. You can edit and destroy yours, but not other peoples.
 

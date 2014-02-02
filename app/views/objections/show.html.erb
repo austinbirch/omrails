@@ -4,6 +4,10 @@
   <%= @objection.title %>
 </p>
 
+<p>
+  <strong>Created By:</strong>
+  <%= @objection.user.name %>
+</p>
 
 <p>
   <strong>Objection:</strong>
@@ -21,7 +25,8 @@
 </p>
 
 
-
-<%= link_to 'Edit', edit_objection_path(@objection) %> |
+<% if current_user == @objection.user %>
+  <%= link_to 'Edit', edit_objection_path(@objection) %> |
+<% end %>
 <%= link_to 'Back', objections_path %>
 
