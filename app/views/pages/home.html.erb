@@ -1,12 +1,18 @@
-<div class="jumbotron">
+<% if user_signed_in? %>
+  <h1>Congrats! You are now logged in!</h1>
+<% else %>
 
-  <h1>Welcome to Teamster!</h1>
-  <p>
-    You've found the homepage for the <%= link_to "Teamster", "http://onemonthrails.com" %> application.
-  </p>
+  <div class="jumbotron">
 
-  <p>
-    <%= link_to "Sign Up Now!", "#", class: "btn btn-primary btn-lg" %>
-  </p>
+    <h1>Welcome to Teamster!</h1>
+    <p>
+      You've found the homepage for the <%= link_to "Teamster", "http://onemonthrails.com" %> application.
+    </p>
 
-</div>
+    <p>
+      <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    </p>
+
+  </div>
+
+<% end %>
