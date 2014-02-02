@@ -1,0 +1,27 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @objection.title %>
+</p>
+
+
+<p>
+  <strong>Objection:</strong>
+  <%= @objection.objection %>
+</p>
+
+<p>
+  <strong>Rebuttal:</strong>
+  <%= @objection.rebuttal %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @objection.tag %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_objection_path(@objection) %> |
+<%= link_to 'Back', objections_path %>
+

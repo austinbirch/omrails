@@ -1,5 +1,7 @@
 Omrails::Application.routes.draw do
   
+  resources :objections
+
   devise_for :users
 
   get 'about' => 'pages#about'

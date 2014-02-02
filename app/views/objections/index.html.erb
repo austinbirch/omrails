@@ -1,0 +1,23 @@
+<h1>Listing objections</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Objection</th>
+      <th>Rebuttal</th>
+      <th>Tag</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    
+  <tbody>
+    <%= render @objections %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Objection', new_objection_path %>
