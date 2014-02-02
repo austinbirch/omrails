@@ -8,6 +8,8 @@ Shit to fix:
 http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
 http://api.rubyonrails.org/classes/ActionController/StrongParameters.html
 http://stackoverflow.com/questions/7085669/adding-name-attribute-to-user-in-devise?rq=1 (see comment: Not sure what the answer for rails 4 is at the moment, but a quick fix would be to add gem 'protected_attributes' to your gemfile. Then you can use attr_accessible)
+https://teamtreehouse.com/forum/strongparameters-and-treebook
+https://teamtreehouse.com/forum/got-a-problem-with-devise-attraccessible-and-rails-4
 
 
 This README would normally document whatever steps are necessary to get the
