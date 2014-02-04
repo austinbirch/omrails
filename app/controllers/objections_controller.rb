@@ -6,7 +6,8 @@ class ObjectionsController < ApplicationController
   # GET /objections
   # GET /objections.json
   def index
-    @objection = Objection.all
+		@user_objections = current_user.objections
+		@team_objections = Objection.where.not(user_id: current_user.id)
   end
 
   # GET /objections/1
